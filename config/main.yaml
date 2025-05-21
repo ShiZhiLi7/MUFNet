@@ -1,0 +1,42 @@
+
+work_dir: ./NTU_Main_work_dir/xview/ctrgcn_motion
+
+
+# feeder
+feeder:  feeder.feeder_mul_feature.Feeder
+train_feeder_args:
+  dataset: xsub
+  dtype: train
+  debug: False
+
+
+test_feeder_args:
+  dataset: xsub
+  dtype: val
+  debug: False
+
+# model
+model: model.MultiModel.MainModel2
+
+# weights: ./NTU_work_dir/xsub/sagcn_joint/83＿34best_acc_weights.pt
+
+
+
+
+# optim
+weight_decay: 0.0005
+base_lr: 0.1
+step: [35, 55]
+
+
+
+# training
+num_epoch: 65
+device: [0]
+batch_size: 64
+test_batch_size: 64
+nesterov: True
+
+
+
+
